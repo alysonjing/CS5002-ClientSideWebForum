@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>StacsYak - Team 5</title>
+  <link rel="stylesheet" type="text/css" href="CS5002-A4-StacsYak.css">
+  <script src="CS5002-A4-StacsYak-window.onload+changeKey.js"></script>
+  <script src="CS5002-A4-StacsYak-del.js"></script>
+  <script src="CS5002-A4-StacsYak-post+postInAllYak+postInMyYak.js"></script>
+  <script src="CS5002-A4-StacsYak-vote.js"></script>
+  <script src="CS5002-A4-StacsYak-filterByOneElement+filterBetweenHours+filterBetweenDays+filterByContent+filterBetweenVotes+sortBy.js"></script>
+  <script src="CS5002-A4-StacsYak-filterByMultiElementsInAllYak.js"></script>
+  <script src="CS5002-A4-StacsYak-filterByMultiElementsInMyYak.js"></script>
+  <script src="CS5002-A4-StacsYak-displayAllYak.js"></script>
+  <script src="CS5002-A4-StacsYak-displayMyYak.js"></script>
+  <script src="CS5002-A4-StacsYak-displayMyProfile+changeNick.js"></script>
+</head>
+
+<body>
+  <div id="header">
+    <h1>StacsYak - Team 5</h1>
+  </div>
+  <div>
+    <button id="allYak" onclick="displayAllYak()"> ALL YAK </button>
+    <button id="myYak" onclick="displayMyYak()"> MY YAK </button>
+    <button id="myProfile" onclick="displayMyProfile()"> MY PROFILE </button>
+    <button id="changeKey" onclick="changeKey()"> CHANGE KEY </button>
+  </div>
+  <!--allYak Block -->
+  <div id="showAllYak" style="padding:10px;  display:none">
+    <div>
+      NEW YAK: <input type="text" id="postContentInAllYak" style="width:400px" name="name">
+      <button class="submitButton" onclick="postInAllYak()" type="submit" value="Post" style="width:100px; padding: 10px; font-size:10px">POST</button><br>
+      <input type="search" placeholder = "Search Yaks" type= "search" id="selectByContentInAllYak">
+      <button class="submitButton"  onclick=filterByMultiElementsInAllYak() type="submit" style="width:100px; padding: 7px; font-size:10px" value="go">Search</button>
+    </div>
+    <div id="filterBar" align="center" style="margin-left:20px">
+      <br>
+        <span> Post between the latest </span>
+        <select id="selectByMinHourInAllYak" onchange=filterByMultiElementsInAllYak()></select>
+        <span> and </span>
+        <select id="selectByMaxHourInAllYak" onchange=filterByMultiElementsInAllYak()></select>
+        <span> hours by </span>
+        <select id="selectByUserNickInAllYak" style="width:50px" onchange=filterByMultiElementsInAllYak()></select>
+        <span> (Nickname)&nbsp;|&nbsp;Total votes ranges from </span>
+        <select id="selectByMinTotalVotesInAllYak" onchange=filterByMultiElementsInAllYak()></select>
+        <span> to </span>
+        <select id="selectByMaxTotalVotesInAllYak" onchange=filterByMultiElementsInAllYak()></select>
+        <span> &nbsp;|&nbsp;My vote type is </span>
+        <select id="selectByMyVoteTypeInAllYak" onchange=filterByMultiElementsInAllYak()></select>
+
+      </br>
+      <br>
+        <span> Sorted by </span>
+        <select id="sortByInAllYak" onchange=filterByMultiElementsInAllYak()></select>
+        <span> &nbsp;|&nbsp;Ascending/Descending </span>
+        <select id="ascendingOrDescendingInAllYak" onchange=filterByMultiElementsInAllYak()></select>
+      </br>
+    </div>
+    <div>
+      <table id="allYakResult"></table>
+    </div>
+  </div>
+  <!--myYak Block -->
+  <div id="showMyYak" style="padding:10px;  display:none">
+      <div>
+        NEW YAK: <input type="text" id="postContentInMyYak" style="width:400px" name="name">
+        <button class="submitButton" onclick="postInMyYak()" type="submit" value="Post" style="width:100px; padding: 10px; font-size:10px">POST</button><br>
+        <input type="search" id="selectByContentInMyYak"  placeholder = "Search Yaks" >
+        <button class = "submitButton" onclick=filterByMultiElementsInMyYak() type="submit" style="width:100px; padding: 7px; font-size:10px" value="go">Search</button>
+      </div>
+      <div id="filterBar" align="center" style="margin-left:20px">
+        <br>
+          <span> Post between the latest </span>
+          <select id="selectByMinDayInMyYak" onchange=filterByMultiElementsInMyYak()></select>
+          <span> and </span>
+          <select id="selectByMaxDayInMyYak" onchange=filterByMultiElementsInMyYak()></select>
+          <span> days&nbsp;|&nbsp;Total votes ranges from </span>
+          <select id="selectByMinTotalVotesInMyYak" onchange=filterByMultiElementsInMyYak()></select>
+          <span> to </span>
+          <select id="selectByMaxTotalVotesInMyYak" onchange=filterByMultiElementsInMyYak()></select>
+          <span> &nbsp;|&nbsp;My vote type is </span>
+          <select id="selectByMyVoteTypeInMyYak" onchange=filterByMultiElementsInMyYak()></select>
+
+        </br>
+        <br>
+          <span> Sorted by </span>
+          <select id="sortByInMyYak" onchange=filterByMultiElementsInMyYak()></select>
+          <span> &nbsp;|&nbsp;Ascending/Descending </span>
+          <select id="ascendingOrDescendingInMyYak" onchange=filterByMultiElementsInMyYak()></select>
+        </br>
+      </div>
+      <div>
+        <table id="myYakResult"></table>
+      </div>
+  </div>
+  <!--myProfile Block -->
+  <div id="showMyProfile" style="padding:10px;  display:none">
+    <table id="profTable" align="center">
+      <tr>
+        <th>MY KEY </th>
+        <td id="myKey"></td>
+      </tr>
+      <tr>
+        <th> MY ID </th>
+        <td id="myId"></td>
+      </tr>
+      <tr>
+        <th> MY NICKNAME </th>
+        <td id="myNickname"></td>
+      </tr>
+      <tr>
+        <th>MY SCORE </th>
+        <td id="myScore"></td>
+      </tr>
+      <tr>
+        <th> MY TOTAL POSTS</th>
+        <td id="myTotalPosts"></td>
+      </tr>
+    </table>
+    <br>
+      <span>Change Nickname:</span>
+      <input id = "newNick" type="text" style="width:200px">
+      <button onclick="changeNick()" type="submit" style="width:100px; padding: 10px; font-size:10px" value="change">Change</button>
+    </br>
+  </div>
+</body>
+
+</html>

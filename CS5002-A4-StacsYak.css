@@ -1,0 +1,178 @@
+#header {
+  text-align: center;
+  margin: 0px;
+  padding: 15px;
+  background-color: #3168e0;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow:hidden;
+
+}
+
+input[type=search] {
+    width: 300px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=search]:focus {
+    width: 50%;
+}
+
+button:hover {
+  opacity: 1;
+}
+body {
+  margin: 0px;
+  text-align: center;
+}
+
+
+.cellButton{
+  width:70px;
+  padding: 10px;
+  font-size:8px;
+}
+
+.submitButton{
+  background-color: #3168e0;
+  border: none;
+  color: white;
+  width: 100px;
+  padding: 10px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button {
+  width: 150px;
+  opacity: 0.8;
+  color: #FFFFFF;
+  background: #9E9E9E;
+  padding: 10px;
+  border: 5px solid #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+th{
+  margin: auto;
+  width:100%;
+  height:100%;
+  border-bottom: 3px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  font-size: 10pt;
+  text-align: center;
+}
+ table th,td:nth-child(3),
+ table th,td:nth-child(2),
+ table th,td:nth-child(6){
+  margin: auto;
+  width:auto;
+  height:auto;
+  border-bottom: 3px solid black;
+  border-collapse: collapse;
+  font-size: 10pt;
+  text-align: center;
+  word-wrap: break-word;
+}
+table th,td:nth-child(1){
+ margin: auto;
+ width:200px;
+ height:auto;
+ border-bottom: 3px solid black;
+ border-collapse: collapse;
+ font-size: 10pt;
+ text-align: center;
+ word-wrap: break-word;
+}
+table{
+  height:auto;
+  margin-top:20px;
+  table-layout: fixed;
+  margin:auto;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+#profTable th,td{
+  width:500px;
+  align:center;
+  border-bottom: 1px solid white;
+  border-collapse: collapse;
+
+}
+
+#myId, #myNickname, #myTotalPosts, #myScore{
+  margin: 20px;
+  width:100%;
+  border-bottom: 3px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+  text-align: center;
+}
+
+table th,td:nth-child(4),
+table th,td:nth-child(5),
+table th,td:nth-child(6),
+table th,td:nth-child(7),
+table th,td:nth-child(8){
+  width:auto;
+  height:auto;
+  border-bottom: 3px solid black;
+  border-collapse: collapse;
+  font-size: 10pt;
+  text-align: center;
+}
+
+input[type=text]{
+  width: 500px;
+  border: none;
+  border-bottom: 2px solid #3168e0;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+input[type=submit]{
+  background-color: #3168e0;
+  border: none;
+  color: white;
+  width: 600px;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+textarea {
+  background-color: #9E9E9E;
+  color: white;
+  margin-top: 10px;
+  width: 600px;
+  height: 50px;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
